@@ -5,7 +5,7 @@ KLEE=~/klee/Release+Asserts/bin/klee
 KLEE_FLAGS=-silent-klee-assume -max-memory=1300 -optimize --libc=uclibc --posix-runtime --allow-external-sym-calls
 CLANG=clang-3.4
 CFLAGS=-Werror=return-type -emit-llvm -D_KLEE_ -I . -I ../../klee/include -c -g
-all: $(OKS)
+all: $(OKS) clean
 
 %_koan.ok: %_koan.bc
 	@set -e ;\
